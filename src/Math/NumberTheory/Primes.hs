@@ -186,7 +186,7 @@ millerRabinWitness n a
 -- >>> millerRabinTest 0x100000000000000d9ccec8a39e56f
 -- True
 millerRabinTest :: Integer -> Bool
-millerRabinTest n = not . any (millerRabinWitness n) $ fst (randomIntegerList 10 (1,n-1) (gen 10) )
+millerRabinTest n = not . any (millerRabinWitness n) $ fst (randomIntegerList (fromIntegral (n*25 `div` n))  (1,n-1) (gen 10) )
 
 -- Generador de enteros aleatorios dentro de un rango
 randomIntegerList :: Int -> (Integer, Integer) -> StdGen -> ([Integer], StdGen)
