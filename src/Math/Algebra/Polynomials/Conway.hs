@@ -200,6 +200,11 @@ primeField n
   | n<= 0 = error "galoisField: valor negativo"
   | isPrimeTrialDivision n = [t| Prime $(TH.litT (TH.numTyLit n)) |]
 
+galoisField :: Integer -> TH.TypeQ 
+galoisField n 
+  | n<= 0 = error "galoisField: valor negativo"
+  | otherwise = [t| Binary $(TH.litT (TH.numTyLit n)) |]
+
 main :: IO ()
 main = do 
   print "Ingrese un número primo: "

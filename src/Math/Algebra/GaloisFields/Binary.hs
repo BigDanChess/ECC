@@ -46,12 +46,6 @@ class (GaloisField k) => BinaryField k where
   -- | Convierte un elemento de \(\mathbb{F}_{2^q}[X]/\langle f(X) \rangle\) a uno de \(\mathbb{Z}\).
   fromB :: k -> Integer
 
-{-
-Antes
-newtype Binary (p :: Nat) = B F2Poly
-  deriving (Eq, Generic, NFData, Ord, Show)
--}
-
 -- | Elementos del campo binario
 newtype Binary :: Nat -> Type where 
   B :: F2Poly -> Binary p deriving (Eq, Generic, NFData, Ord, Show)

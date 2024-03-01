@@ -50,8 +50,9 @@ class (GaloisField k) => PrimeField k where
   fromP :: k -> Integer
 
 -- | Elementos del campo primo.
-newtype Prime (p :: Nat) = P (Mod p)
-  deriving (Eq, Ord, Show, Generic, Num, Fractional, Euclidean, Field, GcdDomain, Ring, Semiring, Bounded, Enum, NFData)
+newtype Prime :: Nat -> Type where 
+  P :: (Mod p) -> Prime p deriving (Eq, Ord, Show, Generic, Num, Fractional, Euclidean, Field, GcdDomain, Ring, Semiring, Bounded, Enum, NFData)
+
 
 instance Hashable (Prime p) where
   hashWithSalt :: Int -> Prime p -> Int

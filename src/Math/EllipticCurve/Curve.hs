@@ -30,7 +30,6 @@ class
   ( GaloisField q,
     PrimeField r,
     Eq (Point f c e q r),
-    Generic (Point f c e q r),
     Group (Point f c e q r),
     NFData (Point f c e q r),
     Random (Point f c e q r),
